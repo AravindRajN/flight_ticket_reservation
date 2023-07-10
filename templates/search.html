@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Results</h2>
+        <p>Date: {{ date }}</p>
+        <p>Time: {{ time }}</p>
+        <h3>Available Flights:</h3>
+        <table>
+            <tr>
+                <th>Flight Code</th>
+                <th>Flight Name</th>
+                <th>Available Seats</th>
+                <th>Action</th>
+            </tr>
+            {% for flight_code, flight_name, seats in flights %}
+            <tr>
+                <td>{{ flight_code }}</td>
+                <td>{{ flight_name }}</td>
+                <td>{{ seats }}</td>
+                <td><a href="/book/{{ flight_code }}">Book</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

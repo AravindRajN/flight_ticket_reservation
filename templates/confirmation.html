@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Booking Confirmation</h2>
+        <p>Flight Code: {{ flight_code }}</p>
+        <p>Flight Name: {{ flight_name }}</p>
+        <p>Seat Number: {{ seat_number }}</p>
+        <p>Booking ID: {{ booking_id }}</p>
+        <p><a href="/dashboard">Go back to Dashboard</a></p>
+    </div>
+</body>
+</html>

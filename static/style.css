@@ -1,0 +1,48 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #cc2323;
+    border-radius: 5px;
+}
+
+body{
+    background-image:url(image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 0;
+
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #003ec4;
+}
+
+.error {
+    color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #3cb43c;
+}
+
+th {
+    background-color: #7a5151;
+}

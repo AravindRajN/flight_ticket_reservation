@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>My Bookings</h2>
+        {% if bookings %}
+        <table>
+            <tr>
+                <th>Booking ID</th>
+                <th>Flight Code</th>
+                <th>Flight Name</th>
+                <th>Seat Number</th>
+            </tr>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.flight_code }}</td>
+                <td>{{ booking.flight_name }}</td>
+                <td>{{ booking.seat_number }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No bookings found.</p>
+        {% endif %}
+        <p><a href="/dashboard">Go back to Dashboard</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flight</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Flight</h2>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/admin/add_flight">
+            <input type="text" name="flight_code" placeholder="Flight Code" required>
+            <input type="text" name="flight_name" placeholder="Flight Name" required>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ session['username'] }}</h2>
+        <h3>Available Flights:</h3>
+        <table>
+            <tr>
+                <th>Flight Code</th>
+                <th>Flight Name</th>
+                <th>Available Seats</th>
+                <th>Action</th>
+            </tr>
+            {% for flight_code, flight in flights.items() %}
+            <tr>
+                <td>{{ flight_code }}</td>
+                <td>{{ flight['name'] }}</td>
+                <td>{{ flight['seats'] }}</td>
+                <td><a href="/admin/remove_flight/{{ flight_code }}">Remove</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h3>Add Flight:</h3>
+        <form method="POST" action="/admin/add_flight">
+            <input type="text" name="flight_code" placeholder="Flight Code" required>
+            <input type="text" name="flight_name" placeholder="Flight Name" required>
+            <input type="submit" value="Add">
+        </form>
+        <p><a href="/logout">Logout</a></p>
+    </div>
+</body>
+</html>
